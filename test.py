@@ -21,3 +21,4 @@ class CensusErrorAnalyzerTest(unittest.TestCase):
             3.535533905932737
         )
         self.assertTrue(self.is_statistically_different((37.9, 0.1), (38.4, 0.1)))
+        self.assertFalse(self.is_statistically_different((37284, 20922), (76850, 47200)))
