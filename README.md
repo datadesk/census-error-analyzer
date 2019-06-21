@@ -47,7 +47,7 @@ The precise difference can also be accessed. According to the Census Bureau, val
 3.535533905932737
 ```
 
-### Convert to alternative confidence levels
+#### Convert to alternative confidence levels
 
 The margins of error published by the Census are at the 90% confidence level. They can be converted to the 95% and 99% levels using the following methods:
 
