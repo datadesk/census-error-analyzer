@@ -47,6 +47,15 @@ The precise difference can also be accessed. According to the Census Bureau, val
 3.535533905932737
 ```
 
+#### Get statistical range
+
+Returns the minimum and maximum values in the statistical range for an estimate given its margin of error. Expects two arguments: The estimate first. The margin of error second.
+
+```python
+>>> census_error_analyzer.statistical_range(us_medianage, us_medianage_moe)
+(37.8, 38.0)
+```
+
 #### Convert to alternative confidence levels
 
 The margins of error published by the Census are at the 90% confidence level. They can be converted to the 95% and 99% levels using the following methods:

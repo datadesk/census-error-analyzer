@@ -3,6 +3,15 @@
 import math
 
 
+def statistical_range(estimate, margin_of_error):
+    """
+    Returns the minimum and maximum values in the statistical range for an estimate given its margin of error.
+
+    Expects two arguments: The estimate first. The margin of error second.
+    """
+    return estimate - margin_of_error, estimate + margin_of_error
+
+
 def convert_to_95_percent_confidence(moe):
     """
     Returns the provided margin of error converted to the 95% confidence level.

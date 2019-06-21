@@ -5,6 +5,12 @@ import census_error_analyzer
 
 class CensusErrorAnalyzerTest(unittest.TestCase):
 
+    def test_range(self):
+        self.assertEqual(
+            census_error_analyzer.statistical_range(37.9, 0.1),
+            (37.8, 38.0)
+        )
+
     def test_conversions(self):
         self.assertEqual(
             census_error_analyzer.convert_to_95_percent_confidence(3778),
