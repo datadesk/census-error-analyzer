@@ -52,8 +52,8 @@ The precise difference can also be accessed. According to the Census Bureau, val
 The margins of error published by the Census are at the 90% confidence level. They can be converted to the 95% and 99% levels using the following methods:
 
 ```python
->>> census_error_analyzer.convert_to_95_percent_confidence(3778),
+>>> census_error_analyzer.convert_to_95_percent_confidence(3778)
 4501.446808510638
->>> census_error_analyzer.convert_to_99_percent_confidence(3778),
+>>> census_error_analyzer.convert_to_99_percent_confidence(3778)
 5925.373860182372
 ```
