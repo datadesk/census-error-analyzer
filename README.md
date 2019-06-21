@@ -54,6 +54,6 @@ The margins of error published by the Census are at the 90% confidence level. Th
 ```python
 >>> census_error_analyzer.convert_to_95_percent_confidence(3778),
 4501.446808510638
->>> census_error_anlayzer.convert_to_99_percent_confidence(3778),
+>>> census_error_analyzer.convert_to_99_percent_confidence(3778),
 5925.373860182372
 ```
