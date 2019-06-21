@@ -23,7 +23,7 @@ Import the library.
 
 #### Test statistical difference
 
-Returns True or False whether two values, considering their respective margins of error, are statistically different.
+Returns `True` or `False` whether two values, considering their respective margins of error, are statistically different. The Census Bureau advises that this test be conducted for all comparisons.
 
 Accepts two lists, each expected to be a pair with the value first and the margin of error second.
 
@@ -57,3 +57,7 @@ The margins of error published by the Census are at the 90% confidence level. Th
 >>> census_error_analyzer.convert_to_99_percent_confidence(3778)
 5925.373860182372
 ```
+
+### References
+
+This module was designed to conform with the Census Bureau's April 18, 2018, presentation ["Using American Community Survey Estimates and Margin of Error."](https://www.documentcloud.org/documents/6162551-20180418-MOE.html)
