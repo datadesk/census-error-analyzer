@@ -5,6 +5,7 @@ Tools for analyzing the margin of error in data published by the U.S. Census Bur
 ### Features
 
 * Statistical difference tests
+* Statistical range
 * Alternative confidence level conversion
 
 ### Installation
