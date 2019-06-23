@@ -24,9 +24,9 @@ Import the library.
 
 #### Test statistical difference
 
-Returns `True` or `False` whether two values, considering their respective margins of error, are statistically different. The Census Bureau advises that this test be conducted for all comparisons.
+Are two values, considering their respective margins of error, statistically different? The Census Bureau advises that this test be conducted for all comparisons. This test answers the question and returns `True` or `False`.
 
-Accepts two lists, each expected to be a pair with the value first and the margin of error second.
+Accepts two lists, each expected to be a pair with a value and its margin of error.
 
 ```python
 >>> us_medianage, us_medianage_moe = 37.9, 0.1
@@ -50,11 +50,11 @@ The precise difference can also be accessed. According to the Census Bureau, val
 
 #### Get statistical range
 
-Returns the minimum and maximum values in the statistical range for an estimate given its margin of error. Expects two arguments: The estimate first. The margin of error second.
+The minimum and maximum values in an estimate's statistical range given its margin of error. Expects two arguments: The estimate first. The margin of error second.
 
 ```python
 >>> census_error_analyzer.statistical_range(us_medianage, us_medianage_moe)
-(37.8, 38.0)
+37.8, 38.0
 ```
 
 #### Convert to alternative confidence levels
