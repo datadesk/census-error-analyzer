@@ -4,7 +4,7 @@ from setuptools import setup
 setup(
     name='census-error-analyzer',
     version='0.0.2',
-    description="Tools for analyzing the margin of error in data published by the U.S. Census Bureau",
+    description="Analyze the margin of error in U.S. census data",
     author='Los Angeles Times Data Desk',
     author_email='datadesk@latimes.com',
     url='http://www.github.com/datadesk/census-error-analyzer',
