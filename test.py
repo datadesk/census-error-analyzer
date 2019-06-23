@@ -17,7 +17,7 @@ class CensusErrorAnalyzerTest(unittest.TestCase):
             4501.446808510638
         )
         self.assertEqual(
-            census_error_anlayzer.convert_to_99_percent_confidence(3778),
+            census_error_analyzer.convert_to_99_percent_confidence(3778),
             5925.373860182372
         )
 
@@ -26,8 +26,8 @@ class CensusErrorAnalyzerTest(unittest.TestCase):
             census_error_analyzer.statistical_difference((37.9, 0.1), (38.4, 0.1)),
             3.535533905932737
         )
-        self.assertTrue(self.is_statistically_different((37.9, 0.1), (38.4, 0.1)))
-        self.assertFalse(self.is_statistically_different((37284, 20922), (76850, 47200)))
+        self.assertTrue(census_error_analyzer.is_statistically_different((37.9, 0.1), (38.4, 0.1)))
+        self.assertFalse(census_error_analyzer.is_statistically_different((37284, 20922), (76850, 47200)))
 
 
 if __name__ == '__main__':
