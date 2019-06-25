@@ -39,19 +39,20 @@ Accepts two lists, each expected to be a pair with a value and its margin of err
     >>> us_medianage, us_medianage_moe = 37.9, 0.1
     >>> nyc_medianage, nyc_medianage_moe = 38.4, 0.1
     >>> census_error_analyzer.is_statistically_different(
-        (us_medianage, us_medianage_moe),
-        (nyc_medianage, nyc_medianage_moe)
-    )
+    >>>    (us_medianage, us_medianage_moe),
+    >>>    (nyc_medianage, nyc_medianage_moe)
+    >>> )
     True
+
 
 The precise difference can also be accessed. According to the Census Bureau, values greater than 1.0 can be considered to be statistically significant.
 
 .. code-block:: python
 
     >>> census_error_analyzer.statistical_difference(
-        (us_medianage, us_medianage_moe),
-        (nyc_medianage, nyc_medianage_moe)
-    )
+    >>>    (us_medianage, us_medianage_moe),
+    >>>    (nyc_medianage, nyc_medianage_moe)
+    >>> )
     3.535533905932737
 
 Get statistical range
