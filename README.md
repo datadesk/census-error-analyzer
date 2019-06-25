@@ -32,9 +32,7 @@ Test statistical difference
 
 Are two values, considering their respective margins of error, statistically different? The Census Bureau advises that this test be conducted for all comparisons. This test answers the question and returns `True` or `False`.
 
-Accepts two lists, each expected to be a pair with a value and its margin of error.
-
-.. code-block:: python
+Accepts two lists, each expected to be a pair with a value and its margin of error. ::
 
     >>> us_medianage, us_medianage_moe = 37.9, 0.1
     >>> nyc_medianage, nyc_medianage_moe = 38.4, 0.1
@@ -45,9 +43,7 @@ Accepts two lists, each expected to be a pair with a value and its margin of err
     True
 
 
-The precise difference can also be accessed. According to the Census Bureau, values greater than 1.0 can be considered to be statistically significant.
-
-.. code-block:: python
+The precise difference can also be accessed. According to the Census Bureau, values greater than 1.0 can be considered to be statistically significant. ::
 
     >>> census_error_analyzer.statistical_difference(
     >>>    (us_medianage, us_medianage_moe),
@@ -68,9 +64,7 @@ The minimum and maximum values in an estimate's statistical range given its marg
 Convert to alternative confidence levels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The margins of error published by the Census are at the 90% confidence level. They can be converted to the 95% and 99% levels using the following methods:
-
-.. code-block:: python
+The margins of error published by the Census are at the 90% confidence level. They can be converted to the 95% and 99% levels using tools in this library. ::
 
     >>> census_error_analyzer.convert_to_95_percent_confidence(3778)
     4501.446808510638
