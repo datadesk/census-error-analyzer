@@ -21,14 +21,13 @@ Installation
 Usage
 -----
 
-Import the library.
-
-.. code-block:: python
+Import the library. ::
 
     >>> import census_error_analyzer
 
+
 Test statistical difference
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Are two values, considering their respective margins of error, statistically different? The Census Bureau advises that this test be conducted for all comparisons. This test answers the question and returns `True` or `False`.
 
@@ -52,17 +51,15 @@ The precise difference can also be accessed. According to the Census Bureau, val
     3.535533905932737
 
 Get statistical range
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
-The minimum and maximum values in an estimate's statistical range given its margin of error. Expects two arguments: The estimate first. The margin of error second.
-
-.. code-block:: python
+The minimum and maximum values in an estimate's statistical range given its margin of error. Expects two arguments: The estimate first. The margin of error second. ::
 
     >>> census_error_analyzer.statistical_range(us_medianage, us_medianage_moe)
     37.8, 38.0
 
 Convert to alternative confidence levels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The margins of error published by the Census are at the 90% confidence level. They can be converted to the 95% and 99% levels using tools in this library. ::
 
