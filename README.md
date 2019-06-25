@@ -13,16 +13,17 @@ Features
 Installation
 ------------
 
-::
 
     $ pipenv install census-error-analyzer
+
 
 Usage
 -----
 
-Import the library. ::
+Import the library.
 
     >>> import census_error_analyzer
+
 
 Test statistical difference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,6 +40,7 @@ Accepts two lists, each expected to be a pair with a value and its margin of err
     )
     True
 
+
 The precise difference can also be accessed. According to the Census Bureau, values greater than 1.0 can be considered to be statistically significant. ::
 
     >>> census_error_analyzer.statistical_difference(
@@ -47,6 +49,7 @@ The precise difference can also be accessed. According to the Census Bureau, val
     )
     3.535533905932737
 
+
 Get statistical range
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -54,6 +57,7 @@ The minimum and maximum values in an estimate's statistical range given its marg
 
     >>> census_error_analyzer.statistical_range(us_medianage, us_medianage_moe)
     37.8, 38.0
+
 
 Convert to alternative confidence levels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,6 +68,7 @@ The margins of error published by the Census are at the 90% confidence level. Th
     4501.446808510638
     >>> census_error_analyzer.convert_to_99_percent_confidence(3778)
     5925.373860182372
+
 
 References
 ----------
