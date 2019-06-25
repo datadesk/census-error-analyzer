@@ -9,7 +9,7 @@ def read(fname):
 
 setup(
     name='census-error-analyzer',
-    version='0.0.2',
+    version='0.0.3',
     description="Analyze the margin of error in U.S. census data",
     long_description=read('README.rst'),
     author='Los Angeles Times Data Desk',
@@ -22,6 +22,13 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3 :: Only',
         'License :: OSI Approved :: MIT License',
+        'Topic :: Scientific/Engineering :: Mathematics'
     ],
+    project_urls={
+        'Maintainer': 'https://github.com/datadesk',
+        'Source': 'https://github.com/datadesk/census-error-analyzer',
+        'Tracker': 'https://github.com/datadesk/census-error-analyzer/issues'
+    },
 )
