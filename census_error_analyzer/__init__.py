@@ -122,7 +122,7 @@ def is_statistically_different(pair_one, pair_two):
     return statistical_difference(pair_one, pair_two) > 1.0
 
 
-def aggregate_counts(pairs):
+def calculate_sum(*pairs):
     """
     Computes a derived estimate and its MOE for the aggregation of all
     the arguments.
@@ -135,7 +135,7 @@ def aggregate_counts(pairs):
         A two-item sequence containing the aggregated estimate and its MOE.
 
     Examples:
-        >>> aggregate_counts([(379, 1), (384, 1)])
+        >>> calculate_sum((379, 1), (384, 1))
         (763, 1.4142135623730953)
 
     """
@@ -146,7 +146,6 @@ def aggregate_counts(pairs):
     for (value, moe) in pairs:
         estimate += value
         squared_moe += moe**2
-
     return (estimate, math.sqrt(squared_moe))
 
 
@@ -168,7 +167,7 @@ def calculate_proportion(numerator_pair, denominator_pair):
 
     Examples:
         >>> calculate_proportion((379, 1), (384, 1))
-        (0.9869791666666666, 0.02046644492870734)
+        (0.9869791666666666, 0.008208247339752435)
 
     """
     # Pull out the values
@@ -176,10 +175,10 @@ def calculate_proportion(numerator_pair, denominator_pair):
     denominator_estimate, denominator_moe = denominator_pair
 
     # Calculate the proportion
-    proportion_estimate = numerator_estimate / denominator_estimate
+    proportion_estimate = 1.0 * numerator_estimate / denominator_estimate
 
     # Calculate the proportion MOE
-    squared_proportion_moe = (
+    squared_proportion_moe = 1.0 * (
         numerator_moe**2 - proportion_estimate**2 * denominator_moe**2
     ) / denominator_estimate
 
@@ -204,7 +203,7 @@ def calculate_ratio(numerator_pair, denominator_pair):
 
     Examples:
         >>> calculate_ratio((379, 1), (384, 1))
-        (0.9869791666666666, 0.0604892511542549)
+        (0.9869791666666666, 0.07170047425884142)
     """
     # Pull out the values
     numerator_estimate, numerator_moe = numerator_pair
@@ -214,7 +213,7 @@ def calculate_ratio(numerator_pair, denominator_pair):
     ratio_estimate = numerator_estimate / denominator_estimate
 
     # Calculate the ratio MOE
-    squared_ratio_moe = (
+    squared_ratio_moe = 1.0 * (
         numerator_moe**2 + ratio_estimate**2 * denominator_moe**2
     ) / denominator_estimate
 
@@ -239,7 +238,7 @@ def calculate_product(pair_one, pair_two):
     Examples:
         >>> calculate_product((384, 1), (0.987, 0.06))
         (379.008, 23.061131130107213)
-    
+
     """
     # Pull out the values
     estimate_one, moe_one = pair_one
@@ -249,7 +248,6 @@ def calculate_product(pair_one, pair_two):
     product_estimate = estimate_one * estimate_two
 
     # Calculate the product MOE
-    squared_product_moe = (estimate_one**2 * moe_two**2
-                           + estimate_two**2 * moe_one**2)
+    squared_product_moe = estimate_one**2 * moe_two**2 + estimate_two**2 * moe_one**2
 
     return (product_estimate, math.sqrt(squared_product_moe))
