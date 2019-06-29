@@ -141,7 +141,7 @@ def aggregate_counts(pairs):
     """
     estimate = 0
     squared_moe = 0
-    
+
     # Pull out the values
     for (value, moe) in pairs:
         estimate += value
@@ -239,7 +239,7 @@ def calculate_product(pair_one, pair_two):
     Examples:
         >>> calculate_product((384, 1), (0.987, 0.06))
         (379.008, 23.061131130107213)
-        
+    
     """
     # Pull out the values
     estimate_one, moe_one = pair_one
@@ -247,9 +247,9 @@ def calculate_product(pair_one, pair_two):
 
     # Calculate the product
     product_estimate = estimate_one * estimate_two
-    
-    # Calculate the product MOE
-    squared_product_moe = (estimate_one**2 * moe_two**2 +
-                           estimate_two**2 * moe_one**2)
 
-    return (products_estimate, math.sqrt(squared_product_moe))
+    # Calculate the product MOE
+    squared_product_moe = (estimate_one**2 * moe_two**2
+                           + estimate_two**2 * moe_one**2)
+
+    return (product_estimate, math.sqrt(squared_product_moe))
