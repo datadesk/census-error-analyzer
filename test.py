@@ -29,6 +29,25 @@ class CensusErrorAnalyzerTest(unittest.TestCase):
         self.assertTrue(census_error_analyzer.is_statistically_different((37.9, 0.1), (38.4, 0.1)))
         self.assertFalse(census_error_analyzer.is_statistically_different((37284, 20922), (76850, 47200)))
 
+    def test_sum(self):
+        estimate, moe = census_error_analyzer.calculate_sum((379, 1), (384, 1))
+        self.assertAlmostEqual(estimate, 763)
+        self.assertAlmostEqual(moe, 1.4142135623730951)
+
+    def test_proportion(self):
+        estimate, moe = census_error_analyzer.calculate_proportion((379, 1), (384, 1))
+        self.assertAlmostEqual(estimate, 0.9869791666666666)
+        self.assertAlmostEqual(moe, 0.008208247339752435)
+
+    def test_ratio(self):
+        estimate, moe = census_error_analyzer.calculate_ratio((379, 1), (384, 1))
+        self.assertAlmostEqual(estimate, 0.9869791666666666)
+        self.assertAlmostEqual(moe, 0.07170047425884142)
+
+    def test_product(self):
+        estimate, moe = census_error_analyzer.calculate_product((384, 1), (0.987, 0.06))
+        self.assertAlmostEqual(estimate, 379.008)
+        self.assertAlmostEqual(moe, 23.061131130107213)
 
 if __name__ == '__main__':
     unittest.main()
