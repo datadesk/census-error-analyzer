@@ -42,9 +42,10 @@ def local_version(version):
 setup(
     name="census-error-analyzer",
     description="Analyze the margin of error in U.S. census data",
-    long_description=read("README.rst"),
-    author="Los Angeles Times Data Desk",
-    author_email="datadesk@latimes.com",
+    long_description=read("README.md"),
+    long_description_content_type="text/markdown",
+    author="Ben Welsh",
+    author_email="b@palewi.re",
     url="https://palewi.re/docs/census-error-analyzer/",
     license="MIT",
     packages=("census_error_analyzer",),
